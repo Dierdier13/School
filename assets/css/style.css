@@ -1,0 +1,310 @@
+@font-face {
+    font-family: 'Manga';
+    /* Le nom que tu donnes à la police */
+    src: url('../font/mangati.ttf') format('woff2'),
+        /* Format moderne */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block !important;
+}
+
+/* ****************** header ****************************** */
+
+/* ****************** Body ******************************** */
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f39c12;
+}
+
+/* ****************** Barre lateral *********************** */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background-color: RGB(44, 70, 88);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.nav {
+    margin-bottom: 200px;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav ul li {
+    margin: 40px 0;
+    font-family: 'Manga';
+}
+
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #f39c12;
+}
+
+.deco {
+    margin-bottom: 40px;
+}
+
+/* ****************** main ******************************** */
+
+button {
+    cursor: pointer;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: RGB(44, 70, 88);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transform: scale(1);
+    transition: ease 0.5s;
+}
+
+button:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+.section {
+    color: RGB(44, 70, 88);
+    margin-left: 150px;
+    /* Pour éviter que le contenu chevauche la sidebar */
+    width: calc(100% - 150px);
+    /* Ajuste la largeur en fonction de la sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        margin-top: 5%;
+    }
+}
+
+h1 {
+    margin: 1%;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Manga';
+    text-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    margin: 3%;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Manga';
+    text-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+.number-student {
+    margin: 3%;
+}
+
+h3 {
+    margin-bottom: 5%;
+    font-size: 20px;
+    padding: 2%;
+    color: #f39c12;
+    background-color: rgba(145, 23, 64, 255);
+    text-align: center;
+    font-family: 'Manga';
+}
+
+p {
+    width: 100%;
+}
+
+#promosContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+    article {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        border: 1px solid RGB(44, 70, 88);
+        border-radius: 15px;
+        margin: 1%;
+        padding: 1%;
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+        transform: scale(1);
+        transition: 1s ease;
+
+        .button {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    }
+
+    article:hover {
+        transform: scale(1.4);
+        z-index: 1;
+        background-color: white;
+    }
+
+}
+
+.div-student {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div-avatar-infos {
+    display: flex;
+    width: 100%;
+    gap: 2%;
+}
+
+.avatar {
+    height: 100px;
+}
+
+.infos {
+    width: 100%;
+}
+
+.infos div {
+    display: flex;
+    gap: 10px;
+
+    input {
+        /* width: 120px; */
+    }
+}
+
+.add {
+    margin-bottom: 5%;
+    font-size: 20px;
+    padding: 1%;
+}
+
+.div-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* ***************** MODAL *************** */
+
+.modal {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    /* border: 3px solid rgba(255, 255, 255, 0.5); */
+    border-radius: 25px;
+    background: rgba(255, 255, 255);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+
+    p {
+        margin-bottom: 15%;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    input {
+        margin-bottom: 10%;
+    }
+
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+@media screen and (max-width: 850px) {
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        height: 150px;
+        background-color: RGB(44, 70, 88);
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        z-index: 1;
+    }
+
+    .logo img {
+        max-height: 150px;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    .section {
+        margin-left: 0;
+        margin-top: 150px;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav ul {
+        display: block;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+}
